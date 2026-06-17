@@ -1,12 +1,12 @@
-# Análise Probabilística de Vulnerabilidades CVE (2020–2026)
+# 📊 Análise Probabilística de Vulnerabilidades CVE (2010–2026)
 
 ## Descrição
 
-Este projeto tem como objetivo realizar uma análise estatística e probabilística de vulnerabilidades registradas no banco de dados CVE (Common Vulnerabilities and Exposures), utilizando registros oficiais do projeto CVE List V5.
+Este projeto tem como objetivo realizar uma análise aprofundada das vulnerabilidades catalogadas no banco de dados **CVE (Common Vulnerabilities and Exposures)**, utilizando os registros oficiais do projeto **CVE List V5**.
 
-A pesquisa concentra-se nos anos de 2020 a 2026, analisando os primeiros identificadores de cada ano (`CVE-YYYY-0xxx`) e extraindo métricas relacionadas à severidade, superfície de ataque, requisitos de exploração e impacto das vulnerabilidades.
+A pesquisa concentra-se nos anos de **2010 a 2026**, analisando os primeiros identificadores de cada ano (`CVE-YYYY-0xxx`) e extraindo métricas relacionadas à severidade, superfície de ataque, requisitos de exploração e impacto das vulnerabilidades.
 
----
+Os dados são obtidos diretamente do repositório oficial do CVE Program e processados com Python para gerar um dataset tabular pronto para análises estatísticas e modelagem probabilística.
 
 ## Objetivos
 
@@ -16,8 +16,6 @@ A pesquisa concentra-se nos anos de 2020 a 2026, analisando os primeiros identif
 * Avaliar características associadas à explorabilidade e ao impacto.
 * Aplicar métodos probabilísticos e estatísticos em dados reais de segurança cibernética.
 
----
-
 ## Fonte dos Dados
 
 Os dados utilizados são provenientes do repositório oficial do CVE Program:
@@ -26,10 +24,12 @@ Os dados utilizados são provenientes do repositório oficial do CVE Program:
 
 Foram considerados os registros dos anos:
 
-* 2020
-* 2021
-* 2022
-* 2023
+* 2010
+* 2011
+* 2012
+* .
+* .
+* .
 * 2024
 * 2025
 * 2026
@@ -42,49 +42,74 @@ até
 CVE-YYYY-0999
 ```
 
----
+## 📋 Variáveis Extraídas
 
-## Variáveis Extraídas
+<table>
+  <tr>
+    <th style="background:#dc3545;color:white;">Categoria</th>
+    <th style="background:#dc3545;color:white;">Variável</th>
+    <th style="background:#dc3545;color:white;">Tipo</th>
+  </tr>
+  <tr style="background:#fff3f3;">
+    <td rowspan="1"><b>🚨 Severidade</b></td>
+    <td>CVSS Score</td>
+    <td><code>🔢 Numérica</code></td>
+  </tr>
+  <tr>
+    <th style="background:#007bff;color:white;" rowspan="4">🧩 Explorabilidade</th>
+    <td>Attack Vector</td>
+    <td><code>🎯 Categórica</code></td>
+  </tr>
+  <tr style="background:#f0f8ff;">
+    <td>Attack Complexity</td>
+    <td><code>🎯 Categórica</code></td>
+  </tr>
+  <tr>
+    <td>Privileges Required</td>
+    <td><code>🎯 Categórica</code></td>
+  </tr>
+  <tr style="background:#f0f8ff;">
+    <td>User Interaction</td>
+    <td><code>🎯 Categórica</code></td>
+  </tr>
+  <tr>
+    <th style="background:#ffc107;color:black;" rowspan="3">💥 Impacto</th>
+    <td>Confidentiality Impact</td>
+    <td><code>🔒 Ordinal</code></td>
+  </tr>
+  <tr style="background:#fffde7;">
+    <td>Integrity Impact</td>
+    <td><code>🔒 Ordinal</code></td>
+  </tr>
+  <tr>
+    <td>Availability Impact</td>
+    <td><code>🔒 Ordinal</code></td>
+  </tr>
+  <tr>
+    <th style="background:#28a745;color:white;" rowspan="3">🏷️ Contexto</th>
+    <td>Vendor</td>
+    <td><code>🎯 Categórica</code></td>
+  </tr>
+  <tr style="background:#f0fff0;">
+    <td>Product</td>
+    <td><code>🎯 Categórica</code></td>
+  </tr>
+  <tr>
+    <td>Published Date</td>
+    <td><code>⌚ Temporal</code></td>
+  </tr>
+  <tr>
+    <th style="background:#6f42c1;color:white;" rowspan="2">⚙️ Operacionais</th>
+    <td>Exploitation</td>
+    <td><code>🎯 Categórica</code></td>
+  </tr>
+  <tr style="background:#f8f0ff;">
+    <td>Automatable</td>
+    <td><code>0️⃣ Binária</code></td>
+  </tr>
+</table>
 
-### Severidade
 
-| Variável   | Tipo     |
-| ---------- | -------- |
-| CVSS Score | Numérica |
-
-### Explorabilidade
-
-| Variável            | Tipo       |
-| ------------------- | ---------- |
-| Attack Vector       | Categórica |
-| Attack Complexity   | Categórica |
-| Privileges Required | Categórica |
-| User Interaction    | Categórica |
-
-### Impacto
-
-| Variável               | Tipo    |
-| ---------------------- | ------- |
-| Confidentiality Impact | Ordinal |
-| Integrity Impact       | Ordinal |
-| Availability Impact    | Ordinal |
-
-### Contexto
-
-| Variável       | Tipo       |
-| -------------- | ---------- |
-| Vendor         | Categórica |
-| Product        | Categórica |
-| Published Date | Temporal   |
-
-### Informações Operacionais
-
-| Variável     | Tipo       |
-| ------------ | ---------- |
-| Exploitation | Categórica |
-| Automatable  | Binária    |
-
----
 
 ## Estrutura do Projeto
 
@@ -112,7 +137,7 @@ AnaliseProbabilistica_CVE/
 └── README.md
 ```
 
----
+
 
 ## Metodologia
 
@@ -124,7 +149,7 @@ AnaliseProbabilistica_CVE/
 6. Aplicação de métodos probabilísticos.
 7. Visualização dos resultados.
 
----
+
 
 ## Possíveis Análises
 
@@ -159,7 +184,7 @@ AnaliseProbabilistica_CVE/
 * Estimativas de ocorrência de vulnerabilidades por categoria.
 * Análise de dependência entre variáveis.
 
----
+
 
 ## Tecnologias Utilizadas
 
@@ -184,14 +209,14 @@ Instale as dependências:
 pip install -r requirements.txt
 ```
 
----
+
 
 ## 📥 Obtenção dos Dados Brutos (Reprodutibilidade)
 
 Os dados utilizados neste projeto não estão incluídos no repositório devido ao seu grande volume.  
 Para reproduzir a análise, o colaborador deve obter os registros oficiais do CVE List V5.
 
----
+
 
 ### 🔹 Passo 1 — Clone com sparse checkout
 
@@ -215,17 +240,18 @@ cves/2016
 ```
 
 #### Estrutura esperada: 
+```text
 cvelistV5/
 └── cves/
     ├── 2010/
     ├── 2011/
     ├── 2012/
-    ├── 2013/
-    ├── 2014/
-    ├── 2015/
-    └── 2016/
+    ├── .
+    ├── .
+    ├── 2025/
+    └── 2026/
+```
 
----
 
 ## Execução
 
@@ -237,7 +263,7 @@ python scripts/extract_dataset.py
 
 O resultado será um dataset estruturado contendo as variáveis extraídas dos registros CVE selecionados.
 
----
+
 
 ## Questões de Pesquisa
 
@@ -246,10 +272,10 @@ Este projeto busca investigar questões como:
 * Existe correlação entre CVSS Score e Attack Vector?
 * Vulnerabilidades que não exigem privilégios prévios tendem a apresentar maior severidade?
 * Determinados produtos concentram vulnerabilidades mais críticas?
-* Há mudanças significativas no perfil das vulnerabilidades entre 2020 e 2026?
+* Há mudanças significativas no perfil das vulnerabilidades entre 2010 e 2026?
 * A distribuição das vulnerabilidades segue padrões estatísticos conhecidos?
 
----
+
 
 ## Licença
 
