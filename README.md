@@ -4,23 +4,23 @@
 
 Este projeto tem como objetivo realizar uma análise probabilística e estatística de vulnerabilidades catalogadas no banco de dados **CVE (Common Vulnerabilities and Exposures)**, utilizando registros oficiais do projeto **CVE List V5**.
 
-A análise considera uma amostra composta pelos primeiros registros de cada ano, abrangendo o período de **2023 a 2026**. Para cada ano, são analisadas as vulnerabilidades do intervalo **CVE-YYYY-0001** até **CVE-YYYY-0999**, totalizando aproximadamente **4.000 registros**.
+A análise considera uma amostra composta pelos primeiros registros de cada ano, abrangendo o período de **2023 a 2026**. Para cada ano, são analisadas as vulnerabilidades do intervalo **CVE-YYYY-0001 até CVE-YYYY-0999**, totalizando até aproximadamente **4.000 registros**.
 
-Os dados são processados com Python para gerar um dataset estruturado, permitindo a aplicação de técnicas de estatística descritiva e probabilidade em um conjunto de dados real da área de segurança da informação.
+Os dados são processados com Python para gerar um dataset estruturado, permitindo a aplicação de técnicas de estatística descritiva e probabilidade em um conjunto de dados reais da área de segurança da informação.
 
+---
 
-
-# Objetivos
+# 🎯 Objetivos
 
 - Construir um dataset estruturado a partir dos registros CVE.
-- Extrair informações relevantes sobre severidade, exploração e impacto.
+- Extrair informações relevantes sobre severidade e exploração.
 - Realizar análises estatísticas descritivas.
-- Aplicar conceitos básicos de probabilidade utilizando dados reais.
-- Produzir visualizações que auxiliem na interpretação dos resultados.
+- Aplicar conceitos básicos de probabilidade em dados reais.
+- Produzir visualizações para interpretação dos resultados.
 
+---
 
-
-# Fonte dos Dados
+# 📂 Fonte dos Dados
 
 Os registros utilizados são provenientes do repositório oficial do CVE Program:
 
@@ -42,27 +42,23 @@ CVE-YYYY-0999
 ```
 
 
-
 # 📋 Variáveis Extraídas
 
-| Categoria | Variável | Tipo |
-|-----------|----------|------|
-| Identificação | CVE ID | Texto |
-| Identificação | Ano | Numérica |
-| Contexto | Vendor | Categórica |
-| Contexto | Product | Categórica |
-| Contexto | Published Date | Temporal |
-| Severidade | CVSS Score | Numérica |
-| Severidade | Severity | Categórica |
-| Explorabilidade | Attack Vector | Categórica |
-| Explorabilidade | Attack Complexity | Categórica |
-| Explorabilidade | Privileges Required | Categórica |
-| Explorabilidade | User Interaction | Categórica |
-| Impacto | Confidentiality Impact | Categórica |
-| Impacto | Integrity Impact | Categórica |
-| Impacto | Availability Impact | Categórica |
-| Operacionais | Exploitation | Categórica |
-| Operacionais | Automatable | Binária |
+| Categoria       | Variável               | Tipo       |
+| --------------- | ---------------------- | ---------- |
+| Identificação   | CVE ID                 | Texto      |
+| Identificação   | Ano                    | Numérica   |
+| Severidade      | CVSS Score             | Numérica   |
+| Severidade      | Severity               | Categórica |
+| Explorabilidade | Attack Vector          | Categórica |
+| Explorabilidade | Attack Complexity      | Categórica |
+| Explorabilidade | Privileges Required    | Categórica |
+| Explorabilidade | User Interaction       | Categórica |
+| Impacto         | Confidentiality Impact | Categórica |
+| Impacto         | Integrity Impact       | Categórica |
+| Impacto         | Availability Impact    | Categórica |
+| Operacionais    | Automatable            | Binária    |
+
 
 
 # Estrutura do Projeto
@@ -84,8 +80,10 @@ AnaliseProbabilistica_CVE/
 ├── resultados/
 │   ├── dataset.csv
 │   ├── dataset.xlsx
-│   ├── tabelas/
-│   └── imagens/
+│   ├── cvss_hist.png
+│   ├── severity.png
+│   ├── attack_vector.png
+│   └── automatable.png
 │
 ├── requirements.txt
 └── README.md
