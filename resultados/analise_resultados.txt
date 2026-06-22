@@ -1,0 +1,88 @@
+[INFO] Carregando dataset...
+[INFO] Total de registros carregados: 3391
+
+=== ESTATÍSTICA DESCRITIVA — CVSS_Score ===
+N (com score válido): 3331
+Média:        6.393
+Mediana:      6.300
+Desvio padrão:1.704
+Mínimo:       1.100
+Máximo:       10.000
+
+=== DISTRIBUIÇÃO — Severity ===
+          Contagem  Percentual (%)
+Severity                          
+MEDIUM        1919           56.59
+HIGH          1000           29.49
+LOW            209            6.16
+CRITICAL       203            5.99
+<NA>            60            1.77
+
+=== DISTRIBUIÇÃO — Attack_Vector ===
+                  Contagem  Percentual (%)
+Attack_Vector                             
+NETWORK               1363           40.19
+<NA>                  1326           39.10
+LOCAL                  569           16.78
+ADJACENT_NETWORK        57            1.68
+ADJACENT                45            1.33
+PHYSICAL                31            0.91
+
+=== DISTRIBUIÇÃO — Attack_Complexity ===
+                   Contagem  Percentual (%)
+Attack_Complexity                          
+LOW                    1829           53.94
+<NA>                   1326           39.10
+HIGH                    236            6.96
+
+=== DISTRIBUIÇÃO — Privileges_Required ===
+                     Contagem  Percentual (%)
+Privileges_Required                          
+<NA>                     1326           39.10
+NONE                      959           28.28
+LOW                       820           24.18
+HIGH                      286            8.43
+
+=== DISTRIBUIÇÃO — User_Interaction ===
+                  Contagem  Percentual (%)
+User_Interaction                          
+NONE                  1345           39.66
+<NA>                  1326           39.10
+REQUIRED               657           19.37
+PASSIVE                 37            1.09
+ACTIVE                  26            0.77
+
+=== DISTRIBUIÇÃO — Automatable ===
+             Contagem  Percentual (%)
+Automatable                          
+no               2697           79.53
+yes               580           17.10
+<NA>              114            3.36
+
+=== PROBABILIDADES SIMPLES ===
+P(vulnerabilidade ser CRITICAL): 0.0599 (203/3391)
+P(Attack_Vector = NETWORK): 0.4019 (1363/3391)
+P(não exigir privilégios): 0.2828 (959/3391)
+P(exploração automatizável): 0.1710 (580/3391)
+
+=== PROBABILIDADES CONDICIONAIS ===
+P(Severity=CRITICAL | Attack_Vector=NETWORK): 0.1196 (163/1363)
+P(Attack_Vector=NETWORK | Severity=CRITICAL): 0.8030 (163/203)
+P(Privileges_Required=NONE | Severity=CRITICAL): 0.6897 (140/203)
+P(Automatable=yes | Attack_Vector=NETWORK): 0.2289 (312/1363)
+
+=== COMPARAÇÃO ENTRE ANOS (2023 vs 2026) ===
+      count   mean  median    std  min   max
+Year                                        
+2023    889  6.438     6.3  1.628  2.0  10.0
+2024    922  6.204     6.3  1.665  2.4  10.0
+2025    837  6.361     6.4  1.681  1.2  10.0
+2026    683  6.628     6.6  1.850  1.1  10.0
+
+Distribuição de Severity por ano:
+Severity  CRITICAL   HIGH   LOW  MEDIUM
+Year                                   
+2023          5.96  30.71  5.29   58.04
+2024          5.10  27.66  7.59   59.65
+2025          5.26  28.20  5.85   60.69
+2026          8.64  34.55  6.30   50.51
